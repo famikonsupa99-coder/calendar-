@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- スマホでもきれいに表示する -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>学校カレンダー</title>
+
+  <!-- CSSを読み込む -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ページのタイトル -->
+  <header>
+    <h1>📅 学校カレンダー</h1>
+    <p>学校の予定を確認できます</p>
+  </header>
+
+
+  <!-- カレンダー -->
+  <main>
+
+    <!-- 月を変えるボタン -->
+    <div class="calendar-top">
+
+      <button id="prevMonth">
+        ← 前の月
+      </button>
+
+      <h2 id="monthTitle">
+        2026年9月
+      </h2>
+
+      <button id="nextMonth">
+        次の月 →
+      </button>
+
+    </div>
+
+
+    <!-- 曜日 -->
+    <div class="week">
+      <div>日</div>
+      <div>月</div>
+      <div>火</div>
+      <div>水</div>
+      <div>木</div>
+      <div>金</div>
+      <div>土</div>
+    </div>
+
+
+    <!-- 日付をJavaScriptで入れる場所 -->
+    <div id="calendar"></div>
+
+
+    <!-- 予定を追加する場所 -->
+    <section class="event-box">
+
+      <h2>予定を追加</h2>
+
+      <label for="eventDate">
+        日付
+      </label>
+
+      <input
+        type="date"
+        id="eventDate"
+      >
+
+
+      <label for="eventText">
+        予定
+      </label>
+
+      <input
+        type="text"
+        id="eventText"
+        placeholder="例：体育祭"
+      >
+
+
+      <button id="addEvent">
+        予定を追加する
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- ページの下 -->
+  <footer>
+    <p>学校カレンダー</p>
+  </footer>
+
+
+  <!-- JavaScriptを読み込む -->
+  <script src="script.js"></script>
+
+</body>
+</html>
