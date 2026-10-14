@@ -1,70 +1,106 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>  <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- スマホでもきれいに表示する -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>学校カレンダー</title>
+
+  <!-- CSSを読み込む -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- ページのタイトル -->
   <header>
     <h1>📅 学校カレンダー</h1>
     <p>学校の予定を確認できます</p>
   </header>
 
+
+  <!-- カレンダー -->
   <main>
-    <section class="search-box">
-      <label for="searchText">🔍 予定を検索</label>
-      <input id="searchText" type="search" placeholder="例：体育祭、テスト">
-      <p class="help-text">入力すると、予定名が一致する予定だけを表示します。</p>
-    </section>
 
+    <!-- 月を変えるボタン -->
     <div class="calendar-top">
-      <button id="prevMonth">← 前の月</button>
-      <h2 id="monthTitle"></h2>
-      <button id="nextMonth">次の月 →</button>
+
+      <button id="prevMonth">
+        ← 前の月
+      </button>
+
+      <h2 id="monthTitle">
+        2026年9月
+      </h2>
+
+      <button id="nextMonth">
+        次の月 →
+      </button>
+
     </div>
 
+
+    <!-- 曜日 -->
     <div class="week">
-      <div>日</div><div>月</div><div>火</div>
-      <div>水</div><div>木</div><div>金</div><div>土</div>
+      <div>日</div>
+      <div>月</div>
+      <div>火</div>
+      <div>水</div>
+      <div>木</div>
+      <div>金</div>
+      <div>土</div>
     </div>
 
+
+    <!-- 日付をJavaScriptで入れる場所 -->
     <div id="calendar"></div>
 
+
+    <!-- 予定を追加する場所 -->
     <section class="event-box">
+
       <h2>予定を追加</h2>
 
-      <label for="eventDate">日付</label>
-      <input type="date" id="eventDate">
+      <label for="eventDate">
+        日付
+      </label>
 
-      <label for="eventText">予定</label>
-      <input type="text" id="eventText" placeholder="例：体育祭">
+      <input
+        type="date"
+        id="eventDate"
+      >
 
-      <label for="eventCategory">予定の種類</label>
-      <select id="eventCategory">
-        <option value="school">学校行事</option>
-        <option value="test">テスト</option>
-        <option value="holiday">休み</option>
-        <option value="other">その他</option>
-      </select>
 
-      <button id="addEvent">予定を追加する</button>
+      <label for="eventText">
+        予定
+      </label>
+
+      <input
+        type="text"
+        id="eventText"
+        placeholder="例：体育祭"
+      >
+
+
+      <button id="addEvent">
+        予定を追加する
+      </button>
+
     </section>
 
-    <section class="backup-box">
-      <h2>💾 バックアップ・復元</h2>
-      <p>予定をファイルに保存したり、保存したファイルから戻したりできます。</p>
-      <button id="backupButton">予定をバックアップ</button>
-      <button id="restoreButton">バックアップから復元</button>
-      <input type="file" id="restoreFile" accept=".json,application/json" hidden>
-      <p class="help-text">復元すると、現在の予定はバックアップの内容に置き換わります。</p>
-    </section>
   </main>
 
+
+  <!-- ページの下 -->
   <footer>
     <p>学校カレンダー</p>
   </footer>
 
+
+  <!-- JavaScriptを読み込む -->
   <script src="script.js"></script>
+
 </body>
 </html>
