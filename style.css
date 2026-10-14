@@ -1,3 +1,4 @@
+/* ページ全体 */
 body {
   margin: 0;
   font-family: Arial, "Noto Sans JP", sans-serif;
@@ -5,6 +6,7 @@ body {
   color: #333;
 }
 
+/* 上のタイトル */
 header {
   text-align: center;
   background: #4f7cff;
@@ -21,13 +23,31 @@ header p {
   margin: 8px 0 0;
 }
 
+
+/* カレンダー全体 */
 main {
   max-width: 1000px;
   margin: 25px auto;
   padding: 0 15px;
-  box-sizing: border-box;
 }
 
+
+/* 月とボタン */
+.calendar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.calendar-top h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+
+/* ボタン */
 button {
   border: none;
   border-radius: 8px;
@@ -42,23 +62,11 @@ button:hover {
   opacity: 0.85;
 }
 
-.calendar-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin: 20px 0 15px;
-}
 
-.calendar-top h2 {
-  margin: 0;
-  font-size: 25px;
-  text-align: center;
-}
-
+/* 曜日 */
 .week {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(7, 1fr);
   background: #333;
   color: white;
   border-radius: 8px 8px 0 0;
@@ -71,15 +79,18 @@ button:hover {
   font-weight: bold;
 }
 
+
+/* カレンダーの日付 */
 #calendar {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(7, 1fr);
   background: white;
 }
 
+
+/* 1日分 */
 .day {
-  min-width: 0;
-  min-height: 100px;
+  min-height: 90px;
   border: 1px solid #ddd;
   padding: 8px;
   box-sizing: border-box;
@@ -91,54 +102,27 @@ button:hover {
   background: #eef3ff;
 }
 
+
+/* 日付の数字 */
 .day-number {
   font-weight: bold;
   font-size: 17px;
 }
 
-/* 今日の日付 */
-.day.today {
-  background: #e3edff;
-  border: 2px solid #3267e8;
-}
 
-.day.today .day-number {
-  color: #174ac4;
-}
-
-/* 予定の色分け */
+/* 予定 */
 .event {
   margin-top: 7px;
   padding: 5px;
+  background: #ffe082;
   border-radius: 5px;
   font-size: 13px;
   word-break: break-word;
-  cursor: pointer;
 }
 
-.event-school {
-  background: #cfe2ff;
-  border-left: 4px solid #2878d0;
-}
 
-.event-test {
-  background: #ffd6d6;
-  border-left: 4px solid #df4545;
-}
-
-.event-holiday {
-  background: #d4f5d0;
-  border-left: 4px solid #319447;
-}
-
-.event-other {
-  background: #ffe8ad;
-  border-left: 4px solid #d99a16;
-}
-
-.event-box,
-.search-box,
-.backup-box {
+/* 予定追加 */
+.event-box {
   margin-top: 25px;
   padding: 20px;
   background: white;
@@ -146,71 +130,58 @@ button:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.event-box h2,
-.backup-box h2 {
+.event-box h2 {
   margin-top: 0;
 }
 
-label {
+.event-box label {
   display: block;
   margin-top: 12px;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-input,
-select {
+.event-box input {
   width: 100%;
   box-sizing: border-box;
   padding: 11px;
   border: 1px solid #ccc;
   border-radius: 7px;
   font-size: 16px;
-  background: white;
-  color: #333;
 }
 
 #addEvent {
   margin-top: 15px;
 }
 
-.backup-box button {
-  margin: 5px 5px 5px 0;
-}
 
-.help-text {
-  color: #666;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
+/* 下 */
 footer {
   text-align: center;
   padding: 25px;
   color: #777;
 }
 
+
+/* スマホ用 */
 @media (max-width: 600px) {
+
   header h1 {
     font-size: 24px;
   }
 
-  .calendar-top {
-    gap: 5px;
-  }
-
   .calendar-top h2 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .calendar-top button {
-    padding: 8px;
-    font-size: 12px;
+    padding: 8px 10px;
+    font-size: 13px;
   }
 
   .day {
-    min-height: 72px;
-    padding: 3px;
+    min-height: 70px;
+    padding: 5px;
   }
 
   .day-number {
@@ -218,24 +189,12 @@ footer {
   }
 
   .event {
-    font-size: 10px;
+    font-size: 11px;
     padding: 3px;
-    margin-top: 4px;
   }
 
   .week div {
     padding: 8px 2px;
     font-size: 13px;
-  }
-
-  .event-box,
-  .search-box,
-  .backup-box {
-    padding: 14px;
-  }
-
-  .backup-box button {
-    width: 100%;
-    margin: 5px 0;
   }
 }
